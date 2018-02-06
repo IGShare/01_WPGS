@@ -1,0 +1,14 @@
+DRC Error Report
+C:/DesigSync_WORKDIR/evm/em/CC2538_EM/Cadence/CC2538EM.brd
+Tue Aug 28 09:29:59 2012
+
+DRC Error Count Summary
+DRC Error Type,DRC Error Count
+Package to Package,2
+Total DRC Errors,2
+
+Detailed DRC Errors
+Constraint Name,DRC Marker Location,Required Value,Actual Value,Constraint Source,Constraint Source Type,Element 1,Element 2
+Package to Package Spacing,(141.100 133.254),0 MM,3.81 MM,NONE,DESIGN,Filled Rectangle "#Refdes, Package Geometry/Place_Bound_Top",Filled Rectangle "A1, Package Geometry/Place_Bound_Top"
+Package to Package Spacing,(125.670 128.910),0 MM,0.6 MM,NONE,DESIGN,Shape "L374, Package Geometry/Place_Bound_Top",Shape "L375, Package Geometry/Place_Bound_Top"
+

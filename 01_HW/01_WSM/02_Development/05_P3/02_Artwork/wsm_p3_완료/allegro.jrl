@@ -1,0 +1,50 @@
+\t (93:02:30) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (93:02:30)     Journal start - Mon Sep 04 12:40:16 2017
+\t (93:02:30)         Host=USER User=Administrator Pid=17512 CPUs=4
+\t (93:02:30) 
+\d (93:02:30) Database opened: G:/01_work/00_IGS/01_Project1/01_WSM/04_WSM_P3/02_Artwokr/wsm_p3/wsm_p3_20170904.brd
+\i (93:02:30) generaledit 
+\i (93:02:31) zoom in 1 
+\i (93:02:32) setwindow pcb
+\i (93:02:32) zoom in 8.7903 18.5366
+\i (93:02:32) trapsize 3028
+\i (93:02:36) setwindow form.vf_vis
+\i (93:02:36) FORM vf_vis all_all_visible YES 
+\i (93:02:38) setwindow pcb
+\i (93:02:38) zoom in 1 
+\i (93:02:38) setwindow pcb
+\i (93:02:38) zoom in 10.9096 19.8688
+\i (93:02:38) trapsize 1514
+\i (93:02:40) zoom out 1 
+\i (93:02:40) setwindow pcb
+\i (93:02:40) zoom out 11.0913 19.6871
+\i (93:02:40) trapsize 3028
+\i (93:02:43) color192 
+\i (93:02:43) setwindow cvf.dialog
+\i (93:02:43) cvf layer_mode
+\i (93:02:43) setwindow pcb
+\i (93:02:43) generaledit 
+\i (93:02:45) setwindow cvf.dialog
+\i (93:02:45) cvf nets_mode
+\i (93:02:48) cvf select_color_cell 16
+\i (93:02:48) cvf nets_color net/d4v2p 17
+\i (93:02:49) cvf apply
+\i (93:02:51) cvf okay
+\i (93:02:51) setwindow pcb
+\i (93:02:51) zoom in 1 
+\i (93:02:51) setwindow pcb
+\i (93:02:51) zoom in 28.8326 12.9661
+\i (93:02:51) trapsize 1514
+\i (93:02:51) zoom in 1 
+\i (93:02:51) setwindow pcb
+\i (93:02:51) zoom in 28.8326 12.9661
+\i (93:02:51) trapsize 757
+\i (93:02:53) zoom out 1 
+\i (93:02:53) setwindow pcb
+\i (93:02:53) zoom out 32.9803 13.1024
+\i (93:02:53) trapsize 1514
+\i (93:03:02) trapsize 2197
+\i (93:04:52) exit 
+\e (93:04:52) Do you want to save the changes you made to wsm_p3_20170904.brd?
+\i (93:04:53) fillin no 
+\t (93:04:53)     Journal end - Mon Sep 04 12:42:39 2017

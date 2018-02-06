@@ -1,0 +1,99 @@
+# Board Station BOM file 
+# date : Friday September 9, 2016; 21:57:57 
+
+
+
+  ITEM_NUMBER          COMPANY PART NO.              GEOMETRY        COUNT             DESCRIPTION                REFERENCE      
+
+       1                       0                      rc1005           1    0                                 R3                 
+       2                     0/DNI                    rc2012           9    0/DNI                             R50 R51 R52 R53    
+                                                                                                              R54 R55 R56 R57    
+                                                                                                              R58                
+       3                   1 PIN HDR                 1pin-hdr          4    1 PIN HDR                         J2 J3 J4 J5        
+       4                     1.2M                     rc2012           1    1.2M                              R42                
+       5                     1.5K                     rc1005           2    1.5K                              R32 R33            
+       6                     100NF                    cc1005          19    100NF                             C1 C2 C3 C5 C6 C7  
+                                                                                                              C19 C20 C21 C29    
+                                                                                                              C30 C31 C33 C35    
+                                                                                                              C36 C37 C44 C48    
+                                                                                                              C49                
+       7                      10K                     rc1608           2    10K                               R14 R17            
+       8                      10K                     rc1005           8    10K                               R1 R2 R15 R16 R20  
+                                                                                                              R21 R35 R47        
+       9                     10NF                     cc1005           2    10NF                              C40 C43            
+      10                     10UF                     cc1608           2    10UF                              C4 C45             
+      11                     10UH                    bead2012          1    10UH                              L1                 
+      12                     12PF                     cc1005           3    12PF                              C10 C17 C18        
+      13                     15.4M                    rc2012           1    15.4M                             R41                
+      14                      1K                      rc1005           7    1K                                R8 R22 R23 R24 R34 
+                                                                                                              R48 R49            
+      15                    1K/DNI                    rc1005           1    1K/DNI                            R9                 
+      16                      1M                      rc1005           3    1M                                R12 R27 R36        
+      17                1N4148W/SOD-123               sod-123          2    1N4148W/SOD-123                   D7 D8              
+      18                      1NF                     cc1005           1    1NF                               C27                
+      19                      1PF                     cc1005           3    1PF                               C9 C11 C12         
+      20                      1UF                     tc3216           1    1UF                               C23                
+      21                      1UF                     cc1005           4    1UF                               C14 C22 C38 C39    
+      22                     2.2UF                    cc1608           2    2.2UF                             C32 C34            
+      23                     2.4NH                   bead1005          2    2.4NH                             L2 L3              
+      24                      200                     rc1005           1    200                               R11                
+      25                     220PF                    cc1608           1    220PF                             C25                
+      26                     22UH                     lps4018          1    22UH                              L23                
+      27         24 MHZ CRYSTAL/S3225A CRYSTAL        s3225a           1    24 MHZ CRYSTAL/S3225A CRYSTAL     Y1                 
+      28                      2K                      rc1005           4    2K                                R26 R30 R31 R37    
+      29                      2NH                    bead1005          2    2NH                               L4 L5              
+      30                     3.3M                     rc2012           1    3.3M                              R38                
+      31                     3.9K                     rc1005           1    3.9K                              R18                
+      32                     300K                     rc1005           1    300K                              R13                
+      33         32.768KHZ XTAL/CM315D3279DZFT         cm315           1    32.768KHZ XTAL/CM315D3279DZFT     Y2                 
+      34                      330                     rc1005           5    330                               R4 R5 R6 R7 R29    
+      35                     4.3M                     rc2012           3    4.3M                              R39 R45 R46        
+      36                     4.64K                    rc1005           2    4.64K                             R25 R28            
+      37                     4.7K                     rc1608           2    4.7K                              R59 R60            
+      38                     4.7UF                    cc1608           2    4.7UF                             C41 C42            
+      39                      47K                     rc1005           1    47K                               R10                
+      40                     47NF                     cc1005           1    47NF                              C24                
+      41                     5.1M                     rc2012           2    5.1M                              R40 R44            
+      42                     5.6M                     rc2012           1    5.6M                              R43                
+      43                     510K                     rc1005           1    510K                              R19                
+      44                     560PF                    cc1005           1    560PF                             C28                
+      45                     6.8PF                    cc1005           1    6.8PF                             C8                 
+      46                     680PF                    cc1608           1    680PF                             C26                
+      47                 AT24C02BN-SH             sop8_3.9_6_1.27      1    AT24C02BN-SH                      U4                 
+      48                      B+                        tp             2    B+                                TP2 TP5            
+      49                      B-                        tp             1    B-                                TP3                
+      50               BL-HG036A-AV-TRB            bl-hg036a-av        6    BL-HG036A-AV-TRB                  D1 D2 D3 D4 D12    
+                                                                                                              D14                
+      51                 BLM41PG750SN1               bead4516         19    BLM41PG750SN1                     L6 L7 L8 L9 L10    
+                                                                                                              L11 L12 L13 L14    
+                                                                                                              L15 L16 L17 L18    
+                                                                                                              L19 L20 L21 L22    
+                                                                                                              L24 L25            
+      52                    BQ24040                 dsq10_2_0.4        1    BQ24040                           U9                 
+      53                    BQ25504                 qfn16_3_0.5        1    BQ25504                           U10                
+      54                   BXZ84C2V7                   sot23           2    BXZ84C2V7                         D10 D13            
+      55                  CC2630_RHB                qfn32_5_0.5        1    CC2630_RHB                        U1                 
+      56                  CSD13381F4                csd13381f4         4    CSD13381F4                        Q4 Q5 Q6 Q7        
+      57                     D3V3P                      tp             1    D3V3P                             TH2                
+      58                      DNI                     cc1005           6    DNI                               C13 C15 C16 C46    
+                                                                                                              C47 C50            
+      59                  EVQ-Q2P02W                   evqq2           1    EVQ-Q2P02W                        SW1                
+      60                      GND                       tp             1    GND                               TH1                
+      61             HEADER_2.54MM/DNI!3P             header3          1    HEADER_2.54MM/DNI!3P              J6                 
+      62             HEADER_2.54MM/DNI!5P             header5          1    HEADER_2.54MM/DNI!5P              J8                 
+      63             HEADER_2.54MM/DNI!7P             header7          1    HEADER_2.54MM/DNI!7P              J7                 
+      64                    KSD-02H                   ksd-02h          1    KSD-02H                           S1                 
+      65                    LIS3MDL                   lga-12           1    LIS3MDL                           U2                 
+      66                   MMBT3904                   sot-323          2    MMBT3904                          Q1 Q2              
+      67                   MMBT3906                   sot-323          1    MMBT3906                          Q3                 
+      68                   PCB_HOLE                  pcb-hole          4    PCB_HOLE                          H1 H2 H3 H4        
+      69              RF SMA-LR-PC/HIROSE               sma            1    RF SMA-LR-PC/HIROSE               J1                 
+      70                S-8200ABE-M6T1U              sot23-6p          1    S-8200ABE-M6T1U                   U8                 
+      71                   SMBJ26CA                     smb            2    SMBJ26CA                          D5 D6              
+      72                   SMW200-02                smw200-02p         3    SMW200-02                         J10 J11 J12        
+      73                   SOLAR P+                     tp             1    SOLAR P+                          TP1                
+      74                   SOLAR P-                     tp             1    SOLAR P-                          TP4                
+      75                    TL072ID               sop8_3.9_6_1.27      1    TL072ID                           U3                 
+      76                  TPS73501-Q1               qfn8_3_0.65        2    TPS73501-Q1                       U6 U7              
+      77                TPS73533QDRBRQ1             qfn8_3_0.65        1    TPS73533QDRBRQ1                   U5                 
+      78                 VS-10BQ015PBF                  smb            2    VS-10BQ015PBF                     D9 D11             

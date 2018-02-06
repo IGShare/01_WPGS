@@ -1,0 +1,89 @@
+# Board Station BOM file 
+# date : Tuesday November 1, 2016; 16:45:39 
+
+
+
+  ITEM_NUMBER          COMPANY PART NO.               GEOMETRY         COUNT             DESCRIPTION                REFERENCE      
+
+       1                       0                       rc1608            8    0                                 R33 R34 R35 R36    
+                                                                                                                R37 R38 R39 R40    
+       2                     0/DNI                     rc1608            1    0/DNI                             R2                 
+       3                   1 PIN HDR                  1pin-hdr           4    1 PIN HDR                         J2 J3 J4 J5        
+       4                     100K                      rc1608            2    100K                              R1 R22             
+       5                     100NF                     cc1608           17    100NF                             C2 C3 C4 C6 C7 C8  
+                                                                                                                C12 C24 C25 C26    
+                                                                                                                C27 C30 C36 C37    
+                                                                                                                C38 C40 C41        
+       6                   100PF/DNI                   cc1608            1    100PF/DNI                         C42                
+       7                      10K                      rc1608            6    10K                               R16 R17 R20 R21    
+                                                                                                                R24 R25            
+       8                     10UF                      cc1608            3    10UF                              C5 C9 C28          
+       9                     10UH                     bead2012           1    10UH                              L2                 
+      10                     12PF                      cc1608            3    12PF                              C14 C18 C19        
+      11                      1K                       rc1608            5    1K                                R12 R26 R27 R28    
+                                                                                                                R30                
+      12                    1K/DNI                     rc1608            1    1K/DNI                            R13                
+      13                      1M                       rc1608            1    1M                                R18                
+      14                      1NF                      cc1608            1    1NF                               C34                
+      15                      1PF                      cc1608            3    1PF                               C13 C15 C17        
+      16                      1UF                      cc1608            1    1UF                               C21                
+      17                      1UF                      tc3216            1    1UF                               C31                
+      18                     2.2UF                     cc1608            1    2.2UF                             C39                
+      19                     2.4NH                    bead1005           2    2.4NH                             L3 L4              
+      20                      200                      rc1608            1    200                               R15                
+      21                     200PF                     cc1608            1    200PF                             C32                
+      22         24 MHZ CRYSTAL/S3225A CRYSTAL         s3225a            1    24 MHZ CRYSTAL/S3225A CRYSTAL     Y2                 
+      23                      2NH                     bead1005           2    2NH                               L5 L6              
+      24                     300K                      rc1608            1    300K                              R19                
+      25         32.768KHZ XTAL/CM315D3279DZFT          cm315            1    32.768KHZ XTAL/CM315D3279DZFT     Y1                 
+      26                      330                      rc1608            6    330                               R5 R6 R9 R10 R29   
+                                                                                                                R31                
+      27                     4.7K                      rc1608            4    4.7K                              R3 R4 R7 R8        
+      28                      47K                      rc1608            1    47K                               R14                
+      29                     47NF                      rc1608            1    47NF                              C29                
+      30                    50/DNI                     rc1608            1    50/DNI                            R32                
+      31                     510K                      rc1608            1    510K                              R23                
+      32                     560PF                     cc1608            1    560PF                             C35                
+      33                     6.8PF                     cc1608            1    6.8PF                             C11                
+      34                     680PF                     cc1608            1    680PF                             C33                
+      35                 AT24C02BN-SH              sop8_3.9_6_1.27       1    AT24C02BN-SH                      U5                 
+      36                      B+                      1pin-hdr           1    B+                                TH11               
+      37                      B+                         tp              9    B+                                TP3 TP4 TP5 TP6    
+                                                                                                                TP7 TP8 TP9 TP10   
+                                                                                                                TP11               
+      38                      B-                      1pin-hdr           1    B-                                TH12               
+      39                     BAT54                      bat54            3    BAT54                             D7 D8 D10          
+      40               BL-HG036A-AV-TRB             bl-hg036a-av         5    BL-HG036A-AV-TRB                  D1 D2 D3 D4 D9     
+      41                 BLM41PG750SN1                bead4516           2    BLM41PG750SN1                     FB6 FB7            
+      42                CC2630F128RGZT               qfn48_7_0.5         1    CC2630F128RGZT                    U1                 
+      43                     D3V3P                    1pin-hdr           1    D3V3P                             TH7                
+      44                     D4V2P                    1pin-hdr           1    D4V2P                             TH5                
+      45                      DNI                      cc1608            6    DNI                               C10 C16 C20 C22    
+                                                                                                                C23 C43            
+      46                  EVQ-Q2P02W                    evqq2            1    EVQ-Q2P02W                        SW1                
+      47                      GND                     1pin-hdr           1    GND                               TH6                
+      48             HEADER_2.54MM/DNI!3P              header3           1    HEADER_2.54MM/DNI!3P              J6                 
+      49             HEADER_2.54MM/DNI!4P              header4           1    HEADER_2.54MM/DNI!4P              J7                 
+      50            HEADER_2ROW_1.27MM/DNI        header6_2row_1.27      1    HEADER_2ROW_1.27MM/DNI            J8                 
+      51            HEADER_2ROW_2.54MM/DNI            header7x2          1    HEADER_2ROW_2.54MM/DNI            J9                 
+      52                  IRF7832PBF               sop8_3.9_6_1.27       2    IRF7832PBF                        Q4 Q5              
+      53                     KHS22                      khs22            1    KHS22                             S1                 
+      54                    LIS3MDL                    lga-12            1    LIS3MDL                           U2                 
+      55                   MMBT3904                    sot-323           2    MMBT3904                          Q1 Q2              
+      56                   MMBT3906                    sot-323           1    MMBT3906                          Q3                 
+      57                   PCB_HOLE                   pcb-hole           7    PCB_HOLE                          H1 H2 H3 H4 H5 H6  
+                                                                                                                H7                 
+      58                    RESET+                       tp              1    RESET+                            TP2                
+      59                    RESET-                       tp              1    RESET-                            TP1                
+      60                RF SMA-R-PC/DNI              rf_sma_r_pc         1    RF SMA-R-PC/DNI                   J1                 
+      61              S-8200ABE-M6T1U/DNI             sot23-6p           1    S-8200ABE-M6T1U/DNI               U7                 
+      62                    SENSOR+                   1pin-hdr           1    SENSOR+                           TH3                
+      63                    SENSOR-                   1pin-hdr           1    SENSOR-                           TH4                
+      64                   SMBJ26CA                      smb             2    SMBJ26CA                          D5 D6              
+      65                 SMW200-02/DNI               smw200-02p          3    SMW200-02/DNI                     J10 J11 J12        
+      66                   SOLAR P+                   1pin-hdr           1    SOLAR P+                          TH9                
+      67                   SOLAR P-                   1pin-hdr           1    SOLAR P-                          TH10               
+      68                    STG3157                    sc70-6            1    STG3157                           U3                 
+      69                      TH                      1pin-hdr           2    TH                                TH1 TH2            
+      70                   TLV342IDR               sop8_3.9_6_1.27       1    TLV342IDR                         U4                 
+      71                TPS73533QDRBRQ1              qfn8_3_0.65         1    TPS73533QDRBRQ1                   U6                 

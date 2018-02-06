@@ -1,0 +1,17 @@
+Waived DRC Error Report
+C:/DesigSync_WORKDIR/evm/em/CC2538_EM/Cadence/CC2538EM.brd
+Tue Aug 28 09:30:00 2012
+
+DRC Error Count Summary
+DRC Error Type,DRC Error Count
+Etch to Pad,3
+Etch to Etch,1
+Total DRC Errors,4
+
+Detailed DRC Errors
+Constraint Name,DRC Marker Location,Required Value,Actual Value,Constraint Source,Constraint Source Type,Element 1,Element 2,Comment
+Shape to SMD Pin Spacing,(125.350 132.730),0.15 MM,0 MM,DEFAULT,NET SPACING CONSTRAINTS,Shape "Dummy Net, Etch/Top",Pin "A1.1",Antenna component
+Shape to SMD Pin Spacing,(123.900 132.730),0.15 MM,0 MM,DEFAULT,NET SPACING CONSTRAINTS,Shape "Dummy Net, Etch/Top",Pin "A1.2",Antenna component
+Shape to SMD Pin Spacing,(121.700 132.730),0.15 MM,0 MM,DEFAULT,NET SPACING CONSTRAINTS,Shape "Dummy Net, Etch/Top",Pin "A1.3",Antenna component
+Line to Shape Spacing,(125.580 132.480),0.15 MM,0.1 MM,DEFAULT,NET SPACING CONSTRAINTS,Shape "Dummy Net, Etch/Top",Vertical Line Segment "N91479, Etch/Top",Antenna component
+
