@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<project name="I2C Light Sensor" version="1.3.0.42428">
+    <desc><![CDATA[Demonstrates use of the bit-banged I2C master interface by sampling the OPT3001 light sensor on the CC2650 SensorTag.
+
+The application is woken if the light sensor output value changes by more than a configurable amount:
+- If decreasing, the application blinks the red LED on the SensorTag.
+- If increasing, the application blinks the green LED on the SensorTag.
+
+See the header in the application source file ("main.c" or similar) for further details and instructions. This file is located in the source code output directory.]]></desc>
+    <pattr name="Board">SmartRF06EB + CC2650EM-7ID</pattr>
+    <pattr name="Chip name">CC2650</pattr>
+    <pattr name="Chip package">QFN48 7x7 RGZ</pattr>
+    <pattr name="Chip revision">-</pattr>
+    <pattr name="Code prefix"></pattr>
+    <pattr name="Operating system">TI-RTOS</pattr>
+    <pattr name="Output directory">./source</pattr>
+    <task name="I2C Light Sensor">
+        <desc><![CDATA[Samples the OPT3001 light sensor on the CC2650 SensorTag. This light sensor integrates over longer periods of time to minimize the effect of 50 and 60 Hz noise sources.
+
+Each iteration of the I2C Light Sensor task:
+- Runs the Execution Code: The light sensor configured for 100 ms integration, and a single measurement is started. The timer based event trigger is enabled (100 ms + margin).
+- Runs the Event Handler Code: The light sensor value is read and processed.
+
+The light sensor output is converted from floating-point (12-bit mantissa, 4-bit exponent) to fixed-point (16-bit). The system CPU is alerted if the value is above or below configurable thresholds.
+
+Note that OPT3001 implements a timeout for I2C accesses, and will NACK I2C TX operations if a task debugging session halts execution in the middle of an I2C transaction.]]></desc>
+        <tattr name="ALS_CFG_ONE_SHOT" desc="OPT3001 configuration triggering 100 ms single conversion" type="hex" content="const" scope="task" min="0000" max="ffff">c210</tattr>
+        <tattr name="ALS_CFG_RESET" desc="OPT3001 configuration at reset (shutdown)" type="hex" content="const" scope="task" min="0000" max="ffff">c810</tattr>
+        <tattr name="ALS_I2C_ADDR" desc="OPT3001 I2C address" type="hex" content="const" scope="task" min="0000" max="ffff">0038</tattr>
+        <tattr name="ALS_REG_CFG" desc="OPT3001 configuration register" type="dec" content="const" scope="task" min="0" max="65535">1</tattr>
+        <tattr name="ALS_REG_RESULT" desc="OPT3001 result register" type="dec" content="const" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="BUFFER_SIZE" desc="ADC Buffer size" type="dec" content="const" scope="task" min="0" max="65535">400</tattr>
+        <tattr name="LIS3MDL_CTRL_REG1_ADDR" desc="Control Register 1" type="hex" content="const" scope="task" min="0000" max="ffff">0020</tattr>
+        <tattr name="LIS3MDL_CTRL_REG2_ADDR" desc="Control Register 2" type="hex" content="const" scope="task" min="0000" max="ffff">0021</tattr>
+        <tattr name="LIS3MDL_CTRL_REG3_ADDR" desc="Control Register 3" type="hex" content="const" scope="task" min="0000" max="ffff">0022</tattr>
+        <tattr name="LIS3MDL_CTRL_REG4_ADDR" desc="Control Register 4" type="hex" content="const" scope="task" min="0000" max="ffff">0023</tattr>
+        <tattr name="LIS3MDL_CTRL_REG5_ADDR" desc="Control Register 5" type="hex" content="const" scope="task" min="0000" max="ffff">0024</tattr>
+        <tattr name="LIS3MDL_INT_CFG_ADDR" type="hex" content="const" scope="task" min="0000" max="ffff">0030</tattr>
+        <tattr name="LIS3MDL_INT_SRC_ADDR" type="hex" content="const" scope="task" min="0000" max="ffff">0031</tattr>
+        <tattr name="LIS3MDL_INT_THS_H" type="hex" content="const" scope="task" min="0000" max="ffff">0033</tattr>
+        <tattr name="LIS3MDL_INT_THS_L" type="hex" content="const" scope="task" min="0000" max="ffff">0032</tattr>
+        <tattr name="LIS3MDL_OUT_X_H_ADDR" desc="Sensor Output x-axis High bit value address" type="hex" content="const" scope="task" min="0000" max="ffff">0029</tattr>
+        <tattr name="LIS3MDL_OUT_X_L_ADDR" desc="Sensor Output x-axis Low value address" type="hex" content="const" scope="task" min="0000" max="ffff">0028</tattr>
+        <tattr name="LIS3MDL_OUT_Y_H_ADDR" desc="Sensor Output y-axis High bit value address" type="hex" content="const" scope="task" min="0000" max="ffff">002b</tattr>
+        <tattr name="LIS3MDL_OUT_Y_L_ADDR" desc="Sensor Output y-axis Low bit value address" type="hex" content="const" scope="task" min="0000" max="ffff">002a</tattr>
+        <tattr name="LIS3MDL_OUT_Z_H_ADDR" desc="Sensor Output z-axis High bit value address" type="hex" content="const" scope="task" min="0000" max="ffff">002d</tattr>
+        <tattr name="LIS3MDL_OUT_Z_L_ADDR" desc="Sensor Output z-axis Low bit value address" type="hex" content="const" scope="task" min="0000" max="ffff">002c</tattr>
+        <tattr name="LIS3MDL_STATUS_REG_ADDR" desc="status register address" type="hex" content="const" scope="task" min="0000" max="ffff">0027</tattr>
+        <tattr name="LIS3MDL_TEMP_OUT_H_ADDR" type="hex" content="const" scope="task" min="0000" max="ffff">002f</tattr>
+        <tattr name="LIS3MDL_TEMP_OUT_L_ADDR" type="hex" content="const" scope="task" min="0000" max="ffff">002e</tattr>
+        <tattr name="LIS3MDL_WHO_AM_I_ADDR" desc="TEST_REGISTER_ADDRESS" type="hex" content="const" scope="task" min="0000" max="ffff">000f</tattr>
+        <tattr name="PULSER_TIME_PERIOD" desc="Half Pulser Width" type="dec" content="const" scope="task" min="0" max="65535">151</tattr>
+        <tattr name="cfg.isInitialSetting" desc="Initial Setting Complete Flag" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.head" desc="ADC Butter Head" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.initXVal" desc="Initial X axis Value" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.initYVal" desc="Initial Y axis Value" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.initZVal" desc="Initial Z axis Value" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.pSamples" desc="ADC Buffer" size="BUFFER_SIZE" type="dec" content="struct_array" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.tail" desc="ADC Butter tail" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.xHigh" desc="LIS3MDL Magnetic sensor output value X high byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.xLow" desc="LIS3MDL Magnetic sensor output value X low byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.yHigh" desc="LIS3MDL Magnetic sensor output value Y high byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.yLow" desc="LIS3MDL Magnetic sensor output value Y low byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.zHigh" desc="LIS3MDL Magnetic sensor output value Z high byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.zLow" desc="LIS3MDL Magnetic sensor output value Z low byte" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <resource_ref name="ADC" enabled="1"/>
+        <resource_ref name="Analog Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Analog Open-Source Pins" enabled="0"/>
+        <resource_ref name="Analog Pins" enabled="1">
+            <io_usage name="SENSOR_OUTPUT" label="Anlolg Ultrasound Sensor Output">
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO29</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="COMPA" enabled="0"/>
+        <resource_ref name="COMPB" enabled="0"/>
+        <resource_ref name="COMPB Event Trigger" enabled="0"/>
+        <resource_ref name="Delay Insertion" enabled="1"/>
+        <resource_ref name="Differential Output Pins" enabled="0"/>
+        <resource_ref name="Digital Input Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Source Pins" enabled="0"/>
+        <resource_ref name="Digital Output Pins" enabled="1">
+            <io_usage name="LED_01" label="LED 01">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output value on initialization">0</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO25</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+            </io_usage>
+            <io_usage name="LED_02" label="LED 02">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output value on initialization">0</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO27</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+            </io_usage>
+            <io_usage name="US_TX_TRIG" label="Ultrasound Sensor Pulser Out">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output value on initialization">0</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO28</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="GPIO Event Trigger" enabled="0"/>
+        <resource_ref name="I2C Master" enabled="1">
+            <rattr name="SCL frequency">1</rattr>
+            <rattr name="SCL stretch timeout">25</rattr>
+            <io_usage>
+                <uattr name="SCL pin/0000">DIO6</uattr>
+                <uattr name="SDA pin/0000">DIO7</uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="ISRC" enabled="0"/>
+        <resource_ref name="Math and Logic" enabled="1"/>
+        <resource_ref name="Multi-Buffered Output Data Exchange" enabled="0">
+            <rattr name="Buffer count">2</rattr>
+            <rattr name="Indicate overflow at buffer check">1</rattr>
+            <rattr name="Indicate overflow at buffer switch">0</rattr>
+            <rattr name="Prevent overflow at buffer switch">1</rattr>
+        </resource_ref>
+        <resource_ref name="Peripheral Sharing" enabled="0"/>
+        <resource_ref name="RTC Multi-Event Capture" enabled="0"/>
+        <resource_ref name="RTC-Based Execution Scheduling" enabled="1"/>
+        <resource_ref name="SPI Chip Select" enabled="0"/>
+        <resource_ref name="SPI Data Transfer" enabled="0">
+            <rattr name="Bit rate">0</rattr>
+            <rattr name="MISO configuration when inactive">-1</rattr>
+            <rattr name="MOSI configuration on initialization">0</rattr>
+            <rattr name="MOSI configuration on uninitialization">0</rattr>
+            <rattr name="SCLK configuration on initialization">0</rattr>
+            <rattr name="SCLK configuration on uninitialization">0</rattr>
+            <io_usage>
+                <uattr name="MISO pin/0000"></uattr>
+                <uattr name="MOSI pin/0000"></uattr>
+                <uattr name="SCLK pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="System CPU Alert" enabled="1"/>
+        <resource_ref name="TDC" enabled="0"/>
+        <resource_ref name="Timer 0" enabled="0"/>
+        <resource_ref name="Timer Event Trigger" enabled="1"/>
+        <resource_ref name="UART Emulator" enabled="0">
+            <rattr name="RX buffer size">64</rattr>
+            <rattr name="Required idle period before enabling RX">11</rattr>
+            <rattr name="TX buffer size">64</rattr>
+            <io_usage>
+                <uattr name="RX pin/0000">DIO2</uattr>
+                <uattr name="TX pin/0000">DIO3</uattr>
+            </io_usage>
+        </resource_ref>
+        <sccode name="event0"><![CDATA[// If a measurement was successfully started during the last execution ...
+
+
+i2cStart();
+i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+i2cTx(0x27);
+if (state.i2cStatus == 0x0000) {
+    U16 StatusValue = 0;
+    S16 X;
+    S16 Y;
+    S16 Z;
+    S16 diffX;
+    S16 diffY;
+    S16 diffZ;
+    S16 sumDiff;
+
+    i2cRepeatedStart() ;
+    i2cTx(I2C_OP_READ | ALS_I2C_ADDR);
+    i2cRxAck(StatusValue);
+
+    StatusValue = StatusValue & 0x0004;
+
+    if(StatusValue == 0x0004){
+        i2cRxAck(output.xLow);
+        i2cRxAck(output.xHigh);
+        i2cRxAck(output.yLow);
+        i2cRxAck(output.yHigh);
+        i2cRxAck(output.zLow);
+        i2cRxAck(output.zHigh);
+
+
+        if(cfg.isInitialSetting == 1){
+            X = (output.xHigh << 8) | (output.xLow);
+            Y = (output.yHigh << 8) | (output.yLow);
+            Z = (output.zHigh << 8) | (output.zLow);
+
+            diffX = output.initXVal - X;
+            diffY = output.initYVal - Y;
+            diffZ = output.initZVal - Z;
+
+            if(diffX<0){
+                diffX = -diffX;
+            }
+            if(diffY<0){
+                diffY = -diffY;
+            }
+            if(diffZ<0){
+                diffZ = -diffZ;
+            }
+
+            sumDiff = diffX;
+            sumDiff += diffY;
+            sumDiff += diffZ;
+
+            if(sumDiff > 1000){
+                //gpioSetOutput(AUXIO_O_LED_02);
+                gpioGenPulseTrain(AUXIO_O_US_TX_TRIG, 1, PULSER_TIME_PERIOD, PULSER_TIME_PERIOD, 10);
+                fwDelayUs(2500, FW_DELAY_RANGE_100_MS);
+
+                // Enable the ADC
+                adcSelectGpioInput(AUXIO_A_SENSOR_OUTPUT);
+                adcEnableSync(ADC_REF_VDDS_REL, ADC_SAMPLE_TIME_10P6_US, ADC_TRIGGER_AUX_TIMER0);
+
+                // Start ADC trigger timer at 80 kHz
+                adcStartAuxTimer0Trigger(12);
+                S16 count=0;
+                U16 adcValCnt=0;
+                while (count < 340) {
+
+                    U16 n = output.head;
+                    adcReadFifo(output.pSamples[n]);
+
+                    if(output.pSamples[n]>3000){
+                        adcValCnt = adcValCnt+1;
+                    }
+
+
+                    // Update the head index
+                    utilIncrAndWrap(n, BUFFER_SIZE; output.head);
+
+                    // Calculate the number of samples currently stored
+                    count = output.head - output.tail;
+                    if (count < 0) {
+                        count += BUFFER_SIZE;
+                    }
+                }
+
+                adcStopAuxTimer0Trigger();
+                // Disable the ADC
+                adcDisable();
+
+                if(adcValCnt> 5){
+                    gpioSetOutput(AUXIO_O_LED_02);
+                    fwDelayUs(10000, FW_DELAY_RANGE_100_MS);
+                }
+
+            }
+        }
+
+        fwGenAlertInterrupt();
+    }
+
+}
+i2cStop();
+//i2cStart();
+//i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+//i2cTx(0x28);
+//if (state.i2cStatus == 0x0000) {
+//    U16 X_H=1;
+//    U16 X_L=1;
+//    U16 Y_H=1;
+//    U16 Y_L=1;
+//    U16 Z_H=1;
+//    U16 Z_L=1;
+
+
+
+//    i2cRepeatedStart() ;
+//    i2cTx(I2C_OP_READ | ALS_I2C_ADDR);
+//    i2cRxAck(X_L);
+///    i2cRxAck(X_H);
+//   i2cRxAck(Y_L);
+//    i2cRxAck(Y_H);
+//    i2cRxAck(Z_L);
+//    i2cRxAck(Z_H);
+
+//    output.xLow = X_L;
+//    output.xHigh = X_H;
+//    output.yLow = Y_L;
+//    output.yHigh = Y_H;
+//    output.zLow = Z_L;
+//    output.zHigh = Z_H;
+
+
+
+//    gpioSetOutput(AUXIO_O_LED_03);
+//    fwDelayUs(100000, FW_DELAY_RANGE_100_MS);
+//    fwGenAlertInterrupt();
+
+//}]]></sccode>
+        <sccode name="execute"><![CDATA[if(cfg.isInitialSetting == 1){
+    gpioSetOutput(AUXIO_O_LED_02);
+    fwDelayUs(10000, FW_DELAY_RANGE_100_MS);
+}
+
+gpioClearOutput(AUXIO_O_LED_01) ;
+//fwDelayUs(100000, FW_DELAY_RANGE_100_MS);
+gpioClearOutput(AUXIO_O_LED_02) ;
+//fwDelayUs(100000, FW_DELAY_RANGE_100_MS);
+
+// Read the result after 100 milliseconds + a 20% margin
+evhSetupTimerTrigger(0, 120, 2);
+
+// Schedule the next execution
+fwScheduleTask(1);]]></sccode>
+        <sccode name="initialize"><![CDATA[// Schedule the first execution
+// Select ADC input
+adcSelectGpioInput(AUXIO_A_SENSOR_OUTPUT);
+
+U16 WhoAmI_Value=0;
+
+i2cStart();
+i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+i2cTx(LIS3MDL_WHO_AM_I_ADDR);
+
+if(state.i2cStatus == 0x0000){
+    //   gpioSetOutput(AUXIO_O_LED_01);
+    i2cRepeatedStart() ;
+    i2cTx(I2C_OP_READ | ALS_I2C_ADDR);
+    i2cRxAck(WhoAmI_Value);
+}
+
+i2cStop();
+
+if(WhoAmI_Value == 0x3D){
+    gpioSetOutput(AUXIO_O_LED_01);
+    fwDelayUs(100000, FW_DELAY_RANGE_100_MS);
+
+    i2cStart();
+    i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+    i2cTx(LIS3MDL_CTRL_REG1_ADDR);
+    i2cTx(0x00);
+    i2cStop();
+
+    i2cStart();
+    i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+    i2cTx(LIS3MDL_CTRL_REG2_ADDR);
+    i2cTx(0x00);
+    i2cStop();
+
+    i2cStart();
+    i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+    i2cTx(LIS3MDL_CTRL_REG3_ADDR);
+    i2cTx(0x20);
+    i2cStop();
+
+    i2cStart();
+    i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+    i2cTx(LIS3MDL_CTRL_REG4_ADDR);
+    i2cTx(0x00);
+    i2cStop();
+
+
+    //    U16 StatusValue = 0;
+
+    //    S16 X;
+    //    S16 Y;
+    //    S16 Z;
+    //    U16 absXYZ = 0;
+    // U16 avgCnt = 0;
+
+    ////while(avgCnt>7){
+    //    i2cStart();
+    //    i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+    //    i2cTx(0x27);
+
+    //    i2cRepeatedStart() ;
+    //    i2cTx(I2C_OP_READ | ALS_I2C_ADDR);
+    //    i2cRxAck(StatusValue);
+
+    //    StatusValue = StatusValue & 0x0004;
+
+    //    if(StatusValue == 0x0004){
+    //        i2cRxAck(output.xLow);
+    //        i2cRxAck(output.xHigh);
+    //        i2cRxAck(output.yLow);
+    //        i2cRxAck(output.yHigh);
+    //        i2cRxAck(output.zLow);
+    //        i2cRxAck(output.zHigh);
+
+    //        X = (output.xHigh << 8) | (output.xLow);
+    //        if(X<0){
+    //            X = -X;
+    //        }
+    //        Y = (output.yHigh << 8) | (output.yLow);
+    //        if(Y<0){
+    //            Y = -Y;
+    //       }
+    //       Z = (output.zHigh << 8) | (output.zLow);
+    //       if(Z<0){
+    //            Z = -Z;
+    //        }
+    //        absXYZ += X;
+    //        absXYZ += Y;
+    //        absXYZ += Z;
+    //avgCnt = avgCnt + 1;
+    //    }
+    //    i2cStop();
+    // }
+
+    //    output.initMagVal = absXYZ + 200;
+    //output.initMagVal += 100;
+
+}
+
+
+fwScheduleTask(1);]]></sccode>
+        <sccode name="terminate"><![CDATA[// Shut down the light sensor
+//i2cStart();
+//i2cTx(I2C_OP_WRITE | ALS_I2C_ADDR);
+//i2cTx(ALS_REG_CFG);
+//i2cTx(ALS_CFG_RESET >> 8);
+//i2cTx(ALS_CFG_RESET >> 0);
+//i2cStop();
+
+// Cancel the potentially active event trigger
+evhCancelTrigger(0);]]></sccode>
+        <tt_iter>run_execute,run_event0</tt_iter>
+        <tt_struct>output.value</tt_struct>
+    </task>
+</project>

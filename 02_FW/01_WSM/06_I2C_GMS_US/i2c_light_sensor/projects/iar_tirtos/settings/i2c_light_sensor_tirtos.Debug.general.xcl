@@ -1,0 +1,15 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armxds2.dll" 
+
+"E:\igs_svn_data\PROJECT_01\02_FW\01_WSM\06_I2C_GMS_US\i2c_light_sensor\projects\iar_tirtos\Debug\Exe\i2c_light_sensor_tirtos.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armbat.dll" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\config\debugger\TexasInstruments\CC26xx.dmac" 
+
+--flash_loader "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\config\flashloader\TexasInstruments\FlashCC26xxF128RAM20.board" 
+
+
+
+

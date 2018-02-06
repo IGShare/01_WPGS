@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <project
+        title="i2c_light_sensor_tirtos"
+        name="i2c_light_sensor_tirtos"
+        device="CC2650F128"
+        toolChain="TI"
+        linkerCommandFile="cc26x0f128.cmd"
+        compilerBuildOptions=" -mv7M3 --code_state=16 --abi=eabi -me -g --gcc --c99 --gen_func_subsections=on --display_error_number --diag_warning=255 --diag_wrap=off -DCC26XXWARE -IC:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc26xxware_2_24_03_17272 -IC:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/tidrivers_cc13xx_cc26xx_2_21_00_04/packages/ti/drivers -IC:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/tidrivers_cc13xx_cc26xx_2_21_00_04/packages/ti/drivers/ti/boards/CC2650STK"
+        linkerBuildOptions=" -lC:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc26xxware_2_24_03_17272/driverlib/bin/ccs/driverlib.lib -x"
+        description="I2C Light Sensor (TI-RTOS)"
+        launchWizard="false">
+
+        <property name="type" value="rtsc"/>
+        <property name="products" value="com.ti.rtsc.TIRTOSCC13XX_CC26XX:2.20.00.06"/>
+        <property name="xdcToolsVersion" value="3.32.00.06"/>
+        <property name="target" value="ti.targets.arm.elf.M3"/>
+        <property name="platform" value="ti.platforms.simplelink:CC2650F128"/>
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value="--compileOptions &quot;${COMPILER_FLAGS} &quot; "/>
+
+        <pathVariable name="CC26XXWARE" path="C:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc26xxware_2_24_03_17272" scope="project"></pathVariable>
+
+        <file path="CC26XXWARE/linker_files/cc26x0f128.cmd" openOnCreation="false" excludeFromBuild="false" action="link" >
+        </file>
+        <file path="CC26XXWARE/startup_files/ccfg.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="./Setup" createVirtualFolders="true">
+        </file>
+        <file path="./rom.cfg" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="./Setup" createVirtualFolders="true">
+        </file>
+        <file path="C:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/tidrivers_cc13xx_cc26xx_2_21_00_04/packages/ti/drivers/ti/boards/CC2650STK/CC2650STK.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="./Setup" createVirtualFolders="true">
+        </file>
+        <file path="C:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/tidrivers_cc13xx_cc26xx_2_21_00_04/packages/ti/drivers/ti/boards/CC2650STK/Board.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="./Setup" createVirtualFolders="true">
+        </file>
+
+        <file path="./../../source/scif.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory=".">
+        </file>
+        <file path="./../../source/scif_framework.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory=".">
+        </file>
+        <file path="./../../source/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory=".">
+        </file>
+
+    </project>
+</projectSpec>
+
