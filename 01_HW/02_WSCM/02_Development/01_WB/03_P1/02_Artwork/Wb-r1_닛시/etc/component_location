@@ -1,0 +1,120 @@
+# BOARD STATION COMPONENT CENTER LOCATION FILE FORMAT 6.0 
+# 
+# File Pathname: d:/WORK/igs-wb-r1/pcb/mfg/component_location 
+# Design Name:   d:/WORK/igs-wb-r1 
+# 
+# Date: 02/02/2017 - 10:39 am 
+# User: changho 
+# 
+# Component Center Location for ALL Components 
+# 
+# Board Name: wb 
+# 
+# UNITS: mm 
+# 
+# Top Side Offset from Board Origin: 0  0 
+# 
+# Ref-Des     X-Loc       Y-Loc       Side        Rotation   ["PART_NO"] 
+# 
+  C12         32.25       17.75       Top         0           "18PF" 
+  C13         36.25       17.75       Top         0           "1PF" 
+  C16         40.5        17.75       Top         90          "1.2PF" 
+  C17         44.75       18.5        Top         180         "DNI" 
+  C18         32.25       19.25       Top         0           "18PF" 
+  C20         34.5        20          Top         270         "1PF" 
+  C21         32.5        10.5        Top         90          "12PF" 
+  C22         32.5        13.38       Top         270         "12PF" 
+  C23         29.25       24          Top         0           "22PF" 
+  C24         26.25       24          Top         180         "22PF" 
+  C26         26          29.5        Top         180         "100NF" 
+  C29         15.25       24.63       Top         270         "100NF" 
+  C34         46.5        10.5        Top         90          "100NF" 
+  C35         48          10.5        Top         90          "1NF" 
+  C37         47.5        2.25        Top         0           "2.2UF" 
+  C38         50.25       3           Top         90          "100NF" 
+  D1          22          7.5         Top         270         "BL-HG036A-AV-TRB" 
+  D2          20.5        7.5         Top         270         "BL-HG036A-AV-TRB" 
+  D3          19          7.5         Top         270         "BL-HG036A-AV-TRB" 
+  D4          17.5        7.5         Top         270         "BL-HG036A-AV-TRB" 
+  D7          11.83       9.25        Top         90          "SMBJ26CA" 
+  D8          7.83        9.25        Top         90          "SMBJ26CA" 
+  D9          11.5        26.5        Top         90          "SMBJ26CA" 
+  D10         7.5         26.5        Top         90          "SMBJ26CA" 
+  D11         45          10.5        Top         270         "BL-HG036A-AV-TRB" 
+  FB2         50.25       11.75       Top         270         "BLM41PG181SN1" 
+  H1          54          3           Top         0           "PCB_HOLE" 
+  H2          3           32          Top         0           "PCB_HOLE" 
+  H3          3           3           Top         0           "PCB_HOLE" 
+  H4          54          32          Top         0           "PCB_HOLE" 
+  J1          41.75       25.75       Top         0           "RF SMA-LR-PC/HIROSE" 
+  J2          22          10          Top         180         "1 PIN HDR" 
+  J3          20.5        11.63       Top         180         "1 PIN HDR" 
+  J4          19          10          Top         180         "1 PIN HDR" 
+  J5          17.5        11.63       Top         180         "1 PIN HDR" 
+  J6          25.25       32          Top         0           "HEADER_2.54MM!6P" 
+  J7          17.5        3           Top         0           "HEADER_2.54MM/DNI" 
+  L1          38.75       18.5        Top         0           "2NH" 
+  L2          42.25       18.5        Top         0           "3.3NH" 
+  L3          34.25       17.25       Top         90          "2NH" 
+  L4          36.5        19.25       Top         0           "2NH" 
+  L5          43          3           Top         90          "BLM18HE152SN1" 
+  L7          44.75       3           Top         90          "BLM18HE152SN1" 
+  L8          41.75       20          Top         90          "3.3NH" 
+  R1          28.5        10.5        Top         90          "2.2K" 
+  R34         43.5        10.5        Top         270         "330" 
+  S1          35.5        3.5         Top         90          "KHS22" 
+  TH3         43          5.75        Top         0           "D3V3P_MCU" 
+  TH4         17          32          Top         0           "GND" 
+  TH5         21.75       32          Top         0           "5VP_IN" 
+  TH6         12.25       32          Top         270         "RS232_OUT" 
+  TH7         7.5         32          Top         270         "RS232_IN" 
+  TH8         47          32          Top         0           "GND" 
+  TH9         41.75       32          Top         0           "RF" 
+  U1          25.25       17.5        Top         0           "CC2538" 
+  U2          12          18.5        Top         180         "MAX3232CDR_SOIC" 
+  U3          47.5        5.5         Top         0           "TPS73533QDRBRQ1" 
+  Y1          35.25       11.25       Top         90          "32 MHZ CRYSTAL/S3225A CRYSTAL" 
+  Y2          27.75       26.5        Top         180         "32.768KHZ XTAL/CM315D3279DZFT" 
+# 
+# Bottom Side Offset from Board Origin: 0  0 
+# 
+# Ref-Des     X-Loc       Y-Loc       Side        Rotation   ["PART_NO"] 
+# 
+  C1          -28.5       16.63       Bottom      180         "100NF" 
+  C2          -28.5       17.88       Bottom      180         "100NF" 
+  C3          -30.75      22.88       Bottom      0           "100NF" 
+  C5          -43         3           Bottom      90          "100NF/DNI" 
+  C6          -22         16.25       Bottom      0           "100NF" 
+  C7          -26.5       14.25       Bottom      270         "100NF" 
+  C8          -28.5       15.38       Bottom      180         "1UF" 
+  C9          -22.88      20.75       Bottom      90          "1UF" 
+  C10         -22         14.25       Bottom      270         "100NF" 
+  C11         -28.5       10.5        Bottom      90          "1NF" 
+  C14         -28.5       20.38       Bottom      180         "100NF" 
+  C15         -28.5       19.13       Bottom      180         "220PF" 
+  C19         -21.63      20.75       Bottom      90          "1UF" 
+  C27         -15         21          Bottom      180         "100NF" 
+  C28         -16.5       15.75       Bottom      270         "100NF" 
+  C30         -12         21          Bottom      180         "100NF" 
+  C31         -9.75       21.75       Bottom      270         "100NF" 
+  C32         -48         10.75       Bottom      90          "10UF" 
+  C33         -46.5       10.5        Bottom      90          "1UF" 
+  C36         -46.5       6.25        Bottom      270         "100NF" 
+  C39         -35.75      5.75        Bottom      0           "100NF" 
+  FB1         -50.25      11.75       Bottom      270         "BLM41PG181SN1" 
+  J11         -54         8.5         Bottom      90          "2.54MM_HEADER" 
+  J12         -7.25       3           Bottom      180         "HEADER_2.54MM!3P" 
+  J13         -3          8.5         Bottom      90          "CON8" 
+  R2          -28.5       21.63       Bottom      0           "56K" 
+  R3          -28.5       26.5        Bottom      90          "0/DNI" 
+  R4          -27         26.5        Bottom      90          "0/DNI" 
+  R5          -22         7.5         Bottom      270         "330" 
+  R6          -20.5       7.5         Bottom      270         "330" 
+  R7          -19         7.5         Bottom      270         "330" 
+  R8          -17.5       7.5         Bottom      270         "330" 
+  R9          -6.63       17.88       Bottom      0           "0" 
+  R10         -6.63       19.13       Bottom      0           "0" 
+  R11         -7.38       15.75       Bottom      270         "0" 
+  R12         -8.88       15.75       Bottom      270         "0" 
+  R32         -35.75      2.75        Bottom      0           "4.7K" 
+  R33         -35.75      4.25        Bottom      0           "4.7K" 

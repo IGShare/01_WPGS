@@ -1,0 +1,19 @@
+\t (00:00:04) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (00:00:04)     Journal start - Thu Nov 03 10:22:19 2016
+\t (00:00:04)         Host=USER User=Administrator Pid=5056 CPUs=4
+\t (00:00:04) 
+\t (00:00:04) Starting new design...
+\i (00:00:04) trapsize 653
+\i (00:00:04) trapsize 641
+\i (00:00:04) trapsize 655
+\i (00:00:04) trapsize 667
+\i (00:00:04) trapsize 1057
+\i (00:00:05) generaledit 
+\i (00:00:05) trapsize 1491
+\i (00:00:07) trapsize 1002
+\i (00:00:08) open 
+\i (00:00:24) fillin "C:\work\00_IGS\01_WSM\06_최종자료\01_WSM_Artwork\allegro\usm.brd"
+\i (00:00:24) cd "C:\work\00_IGS\01_WSM\06_최종자료\01_WSM_Artwork\allegro"
+\t (00:00:24) Opening existing design...
+\i (00:00:24) trapsize 1803
+\t (00:00:24)     Journal end - Thu Nov 03 10:22:40 2016

@@ -1,0 +1,49 @@
+\t (00:00:27) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (00:00:27)     Journal start - Wed Nov 02 16:33:13 2016
+\t (00:00:27)         Host=USER User=Administrator Pid=8480 CPUs=4
+\t (00:00:27) 
+\d (00:00:27) Database opened: C:/work/00_IGS/03_WB/04_Artwork/wb_√÷¡æ/allegro/wb_allegro/wb.brd
+\i (00:00:27) generaledit 
+\i (00:00:31) color192 
+\i (00:00:31) setwindow cvf.dialog
+\i (00:00:31) cvf layer_mode
+\i (00:00:31) setwindow pcb
+\i (00:00:31) generaledit 
+\i (00:00:33) setwindow cvf.dialog
+\i (00:00:33) cvf nets_mode
+\i (00:00:34) cvf nets_color net/5vp 1
+\i (00:00:35) cvf select_color_cell 32
+\i (00:00:36) cvf nets_color net/5vp_in 33
+\i (00:00:38) cvf select_color_cell 48
+\i (00:00:39) cvf nets_color net/d3v3p 49
+\i (00:00:41) cvf select_color_cell 64
+\i (00:00:42) cvf nets_color net/d3v3p_mcu 65
+\i (00:00:43) cvf apply
+\i (00:00:43) cvf okay
+\i (00:00:45) setwindow form.vf_vis
+\i (00:00:45) FORM vf_vis 1 all_colorvisible NO 
+\i (00:00:47) FORM vf_vis 2 all_colorvisible NO 
+\i (00:00:48) FORM vf_vis 3 all_colorvisible NO 
+\i (00:00:50) FORM vf_vis 4 all_colorvisible NO 
+\i (00:00:50) FORM vf_vis 5 all_colorvisible NO 
+\i (00:00:51) FORM vf_vis 3 all_colorvisible YES 
+\i (00:00:52) FORM vf_vis 3 all_colorvisible NO 
+\i (00:00:52) FORM vf_vis 3 all_colorvisible YES 
+\i (00:00:57) FORM vf_vis 3 all_colorvisible NO 
+\i (00:00:58) FORM vf_vis 2 all_colorvisible YES 
+\i (00:00:59) FORM vf_vis 3 all_colorvisible YES 
+\i (00:01:01) FORM vf_vis 4 all_colorvisible YES 
+\i (00:01:01) FORM vf_vis 1 all_colorvisible YES 
+\i (00:01:03) setwindow pcb
+\i (00:01:03) zoom in 1 
+\i (00:01:03) setwindow pcb
+\i (00:01:03) zoom in 38.3713 14.1210
+\i (00:01:03) trapsize 1400
+\i (00:04:38) zoom out 1 
+\i (00:04:38) setwindow pcb
+\i (00:04:38) zoom out 48.7323 16.8372
+\i (00:04:38) trapsize 2800
+\i (00:04:40) exit 
+\e (00:04:40) Do you want to save the changes you made to wb.brd?
+\i (00:04:40) fillin no 
+\t (00:04:41)     Journal end - Wed Nov 02 16:37:27 2016

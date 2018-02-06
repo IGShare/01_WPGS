@@ -1,0 +1,21 @@
+\t (00:00:03) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (00:00:03)     Journal start - Mon Nov 07 15:49:25 2016
+\t (00:00:03)         Host=USER User=Administrator Pid=4568 CPUs=4
+\t (00:00:03) 
+\t (00:00:04) Opening existing design...
+\w (00:00:05) WARNING(SPMHDB-214): OrCAD PCB Designer Standard opening an Allegro XL design.
+\w (00:00:05) WARNING(SPMHDB-213): DRC set to "out of date". This product supports a different DRC set than last product used on drawing.
+\w (00:00:05) WARNING(SPMHOD-33): Design was last saved by a different product (Allegro XL). Constraints and other design data may not be available with this product. Functionality between two products may also be equivalent, you should consult the product functionality matrix to determine differences.
+\i (00:00:06) fillin confirm
+\d (00:00:06) Database opened: C:/work/00_IGS/01_WSM/05_Artwork/P1/WSM_P1 √÷¡æ/allegro/wsm.brd
+\i (00:00:06) trapsize 3394
+\i (00:00:06) trapsize 3332
+\i (00:00:06) trapsize 3405
+\i (00:00:06) trapsize 3470
+\i (00:00:06) trapsize 5332
+\i (00:00:07) generaledit 
+\i (00:00:08) open 
+\i (00:00:18) fillin "menu_cancel"
+\i (00:00:18) generaledit 
+\i (00:00:20) exit 
+\t (00:00:20)     Journal end - Mon Nov 07 15:49:42 2016

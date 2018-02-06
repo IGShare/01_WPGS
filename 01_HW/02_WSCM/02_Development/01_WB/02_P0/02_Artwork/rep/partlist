@@ -1,0 +1,50 @@
+# Board Station BOM file 
+# date : Tuesday October 4, 2016; 15:55:13 
+
+
+
+  ITEM_NUMBER          COMPANY PART NO.                GEOMETRY         COUNT             DESCRIPTION                REFERENCE      
+
+       1                       0                        rc1608            4    0                                 R9 R10 R11 R12     
+       2                     0/DNI                      rc1608            2    0/DNI                             R3 R4              
+       3                   1 PIN HDR                   header1            4    1 PIN HDR                         J2 J3 J4 J5        
+       4                     1.2PF                      cc1608            1    1.2PF                             C16                
+       5                     100NF                      cc1608           18    100NF                             C1 C2 C3 C4 C6 C7  
+                                                                                                                 C10 C14 C25 C26    
+                                                                                                                 C27 C28 C29 C30    
+                                                                                                                 C31 C34 C36 C38    
+       6                   100NF/DNI                    cc1608            1    100NF/DNI                         C5                 
+       7                     10UF                       tc2012            1    10UF                              C32                
+       8                     18PF                       cc1608            2    18PF                              C12 C18            
+       9                      1NF                       cc1608            2    1NF                               C11 C35            
+      10                      1PF                       cc1608            2    1PF                               C13 C20            
+      11                      1UF                       cc1608            4    1UF                               C8 C9 C19 C33      
+      12                     2.2K                       rc1608            1    2.2K                              R1                 
+      13                     2.2UF                      cc1608            1    2.2UF                             C37                
+      14                     220PF                      cc1608            1    220PF                             C15                
+      15                     22PF                       cc1608            2    22PF                              C23 C24            
+      16                      2NH                      bead1005           3    2NH                               L1 L3 L4           
+      17                     3.3NH                     bead1005           2    3.3NH                             L2 L8              
+      18         32 MHZ CRYSTAL/S3225A CRYSTAL          s3225a            1    32 MHZ CRYSTAL/S3225A CRYSTAL     Y1                 
+      19         32.768KHZ XTAL/CM315D3279DZFT          cm315             1    32.768KHZ XTAL/CM315D3279DZFT     Y2                 
+      20                      330                       rc1608            4    330                               R5 R6 R7 R8        
+      21                      56K                       rc1608            1    56K                               R2                 
+      22                      5VP                       tp0.9             1    5VP                               TH2                
+      23                  76342-305LF                76342-305lf          2    76342-305LF                       J11 J13            
+      24               BL-HG036A-AV-TRB                led1608            4    BL-HG036A-AV-TRB                  D1 D2 D3 D4        
+      25                 BLM41PG181SN1                 bead4516           2    BLM41PG181SN1                     FB1 FB2            
+      26                 BLM41PG750SN1                 bead4516           3    BLM41PG750SN1                     L5 L6 L7           
+      27                    CC2538                qfn56_8_0.5_pad6.6      1    CC2538                            U1                 
+      28                     D3V3P                      tp0.9             1    D3V3P                             TH3                
+      29                      DNI                       cc1608            3    DNI                               C17 C21 C22        
+      30                      GND                       tp0.9             1    GND                               TH1                
+      31             HEADER_1.27MM/DNI!5P            header5_1.27         1    HEADER_1.27MM/DNI!5P              J7                 
+      32             HEADER_1.27MM/DNI!7P            header7_1.27         1    HEADER_1.27MM/DNI!7P              J6                 
+      33               HEADER_2.54MM/DNI               header3            1    HEADER_2.54MM/DNI                 J12                
+      34                MAX3232CDR_SOIC            sop16_3.9_6_1.27       1    MAX3232CDR_SOIC                   U2                 
+      35              RF SMA-LR-PC/HIROSE              sma-r-pc           1    RF SMA-LR-PC/HIROSE               J1                 
+      36                   SMBJ26CA                    do-214aa           2    SMBJ26CA                          D7 D8              
+      37                 SMBJ26CA/DNI                  do-214aa           2    SMBJ26CA/DNI                      D5 D6              
+      38                   SMW200-03                  smw200-03           1    SMW200-03                         J10                
+      39                      TP                      tp1.0_smd           2    TP                                TP1 TP2            
+      40                TPS73533QDRBRQ1              son8_3_0.65          1    TPS73533QDRBRQ1                   U3                 

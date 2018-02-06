@@ -1,0 +1,26 @@
+\t (00:00:04) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (00:00:04)     Journal start - Wed Dec 28 16:23:03 2016
+\t (00:00:04)         Host=USER User=Administrator Pid=7796 CPUs=4
+\t (00:00:04) 
+\t (00:00:06) Opening existing design...
+\w (00:00:06) WARNING(SPMHDB-214): OrCAD PCB Designer Standard opening an Allegro XL design.
+\w (00:00:06) WARNING(SPMHDB-213): DRC set to "out of date". This product supports a different DRC set than last product used on drawing.
+\w (00:00:06) WARNING(SPMHOD-33): Design was last saved by a different product (Allegro XL). Constraints and other design data may not be available with this product. Functionality between two products may also be equivalent, you should consult the product functionality matrix to determine differences.
+\i (00:00:09) fillin confirm
+\d (00:00:09) Database opened: D:/01_work/00_IGS/00_Project1/03_WB/01_WB P1/03_Artwork/wb-r1_√÷¡æ/allegro/wb.brd
+\i (00:00:09) trapsize 1950
+\i (00:00:09) trapsize 1914
+\i (00:00:09) trapsize 1956
+\i (00:00:09) trapsize 2039
+\i (00:00:09) trapsize 3063
+\i (00:00:10) generaledit 
+\i (00:00:12) open 
+\i (00:00:25) fillin "D:\01_work\00_IGS\01_Project2\04_USM\03_Artwork\usm-r1\allegro\usm-r1_allegro\usm-r1_allegro.brd"
+\i (00:00:25) cd "D:\01_work\00_IGS\01_Project2\04_USM\03_Artwork\usm-r1\allegro\usm-r1_allegro"
+\t (00:00:25) Opening existing design...
+\w (00:00:25) WARNING(SPMHDB-214): OrCAD PCB Designer Standard opening an Allegro XL design.
+\w (00:00:26) WARNING(SPMHDB-213): DRC set to "out of date". This product supports a different DRC set than last product used on drawing.
+\w (00:00:26) WARNING(SPMHOD-33): Design was last saved by a different product (Allegro XL). Constraints and other design data may not be available with this product. Functionality between two products may also be equivalent, you should consult the product functionality matrix to determine differences.
+\i (00:00:26) fillin confirm
+\i (00:00:26) trapsize 3658
+\t (00:00:26)     Journal end - Wed Dec 28 16:23:26 2016

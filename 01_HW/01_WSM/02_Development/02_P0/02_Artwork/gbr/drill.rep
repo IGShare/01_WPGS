@@ -1,0 +1,32 @@
+Friday September 9, 2016; 21:57:11 
+
+DRILL TABLE
+
+Drill Position  Drill Size  Upper Bound  Lower Bound  Plated  Drill Type       Symbol         
+      1         0.300000    0.300000     0.300000     yes     MECHANICAL       drillsymb1                            
+      2         0.800000    0.800000     0.800000     yes     MECHANICAL       drillsymb2                            
+      3         0.900000    0.900000     0.900000     yes     MECHANICAL       drillsymb3                            
+      4         1.000000    1.000000     1.000000     yes     MECHANICAL       drillsymb4                            
+      5         1.500000    1.500000     1.500000     yes     MECHANICAL       drillsymb5                            
+      6         3.000000    3.000000     3.000000     yes     MECHANICAL       drillsymb6                            
+DRILL FORMAT
+
+
+Drill machine coordinate mode is ABSOLUTE
+
+Drill machine supports MILLIMETER units
+Scale is 1.000 
+
+Data format is 3.3
+
+Drill machine modal coordinate is OFF
+
+Leading zeros are PRESENT
+
+Trailing zeros are PRESENT
+
+Drill machine origin (x, y) at (0.0, 0.0)
+
+Drill machine command block end char is ''
+
+Drill machine stop code is 'M30'

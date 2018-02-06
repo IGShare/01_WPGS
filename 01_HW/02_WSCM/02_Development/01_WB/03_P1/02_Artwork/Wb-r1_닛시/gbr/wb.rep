@@ -1,0 +1,133 @@
+Thursday February 2, 2017; 10:39:16 
+
+Position  Shape                 Type          Height(Y)/Diameter  Width(X)     Orientation      Mirror  Power  Dcode  Used Last Run
+1         circle                trace         0.203200            0.000000     0                false   false  10     true         
+2         circle                trace         0.120000            0.000000     0                false   false  11     true         
+3         circle                trace         0.152400            0.000000     0                false   false  12     true         
+4         rectangle             flash         0.816000            2.032000     0                false   false  13     false        
+5         circle                trace         0.199390            0.000000     0                false   false  14     true         
+6         circle                trace         0.070000            0.000000     0                false   false  15     true         
+7         rectangle             flash         0.061730            0.061720     0                false   false  16     false        
+8         circle                flash         3.900000            0.000000     0                false   false  17     true         
+9         rectangle             flash         1.500000            1.500000     0                false   false  18     true         
+10        circle                flash         1.500000            0.000000     0                false   false  19     true         
+11        rectangle             flash         2.100000            2.900000     0                false   false  70     true         
+12        circle                trace         0.735000            0.000000     0                false   false  71     true         
+13        circle                flash         1.400000            0.000000     0                false   false  20     true         
+14        rectangle             flash         1.000000            0.900000     0                false   false  21     true         
+15        rectangle             flash         0.355600            0.890600     0                false   false  22     true         
+16        rectangle             flash         0.350000            1.000000     0                false   false  23     true         
+17        rectangle             flash         0.890600            0.355600     0                false   false  24     true         
+18        rectangle             flash         1.000000            0.350000     0                false   false  25     true         
+19        rectangle             flash         6.700000            6.700000     0                false   false  26     true         
+20        rectangle             flash         0.900000            1.000000     0                false   false  27     true         
+21        rectangle             flash         2.000000            1.200000     0                false   false  28     true         
+22        rectangle             flash         0.863600            1.498600     0                false   false  29     true         
+23        rectangle             flash         1.400000            1.150000     0                false   false  72     true         
+24        circle                flash         2.200000            0.000000     0                false   false  73     true         
+25        rectangle             flash         1.000000            0.425000     0                false   false  125    true         
+26        rectangle             flash         1.750000            2.500000     0                false   false  126    true         
+27        rectangle             flash         1.400000            2.100000     0                false   false  127    true         
+28        circle                trace         0.200000            0.000000     0                false   false  128    true         
+29        circle                trace         0.500000            0.000000     0                false   false  129    true         
+30        circle                trace         0.250000            0.000000     0                false   false  130    true         
+31        circle                trace         0.300000            0.000000     0                false   false  131    true         
+32        circle                trace         0.400000            0.000000     0                false   false  132    true         
+33        circle                flash         0.530000            0.000000     0                false   false  133    true         
+34        circle                flash         3.800000            0.000000     0                false   false  134    true         
+35        rectangle             flash         1.400000            1.400000     0                false   false  135    true         
+36        circle                flash         1.300000            0.000000     0                false   false  136    true         
+37        circle                flash         2.100000            0.000000     0                false   false  137    true         
+38        circle                trace         0.100000            0.000000     0                false   false  138    true         
+39        rectangle             flash         2.000000            2.800000     0                false   false  139    true         
+40        circle                trace         0.635000            0.000000     0                false   false  140    true         
+41        rectangle             flash         0.900000            0.800000     0                false   false  141    true         
+42        rectangle             flash         0.254000            0.789000     0                false   false  142    true         
+43        rectangle             flash         0.250000            0.900000     0                false   false  143    true         
+44        rectangle             flash         0.789000            0.254000     0                false   false  144    true         
+45        rectangle             flash         0.900000            0.250000     0                false   false  145    true         
+46        rectangle             flash         6.600000            6.600000     0                false   false  146    true         
+47        rectangle             flash         0.800000            0.900000     0                false   false  147    true         
+48        rectangle             flash         1.900000            1.100000     0                false   false  148    true         
+49        rectangle             flash         0.762000            1.397000     0                false   false  149    true         
+50        rectangle             flash         1.300000            1.050000     0                false   false  150    true         
+51        rectangle             flash         0.900000            0.325000     0                false   false  151    true         
+52        rectangle             flash         1.650000            2.400000     0                false   false  152    true         
+53        rectangle             flash         1.300000            2.000000     0                false   false  153    true         
+54        circle                trace         0.700000            0.000000     0                false   false  154    true         
+55        rectangle             flash         1.100000            1.250000     0                false   false  155    true         
+56        rectangle             flash         1.200000            1.350000     0                false   false  156    true         
+57        circle                trace         0.113790            0.000000     0                false   false  157    true         
+58        rectangle             flash         0.457200            0.076200     0                false   false  158    false        
+59        rectangle             flash         2.286000            0.076200     0                false   false  159    false        
+60        rectangle             flash         2.133600            0.076200     0                false   false  160    false        
+61        rectangle             flash         0.381000            0.076200     0                false   false  161    false        
+62        rectangle             flash         0.609600            0.076200     0                false   false  162    false        
+63        rectangle             flash         1.905000            0.076200     0                false   false  163    false        
+64        rectangle             flash         2.438400            0.076200     0                false   false  164    false        
+65        rectangle             flash         2.209800            0.076200     0                false   false  165    false        
+66        rectangle             flash         0.533400            0.076200     0                false   false  166    false        
+67        rectangle             flash         2.514600            0.076200     0                false   false  167    false        
+68        rectangle             flash         2.362200            0.076200     0                false   false  168    false        
+69        rectangle             flash         1.981200            0.076200     0                false   false  169    false        
+70        rectangle             flash         1.828800            0.076200     0                false   false  170    false        
+71        rectangle             flash         0.076200            0.076200     0                false   false  171    false        
+72        rectangle             flash         1.676400            0.076200     0                false   false  172    false        
+73        rectangle             flash         1.219200            0.076200     0                false   false  173    false        
+74        rectangle             flash         1.295400            0.076200     0                false   false  174    false        
+75        rectangle             flash         2.057400            0.076200     0                false   false  175    false        
+76        rectangle             flash         0.304800            0.076200     0                false   false  176    false        
+77        rectangle             flash         0.762000            0.076200     0                false   false  177    false        
+78        rectangle             flash         0.228600            0.076200     0                false   false  178    false        
+79        circle                trace         0.091440            0.000000     0                false   false  179    true         
+80        circle                trace         0.121920            0.000000     0                false   false  180    true         
+81        circle                trace         0.025000            0.000000     0                false   false  181    true         
+82        circle                trace         0.020320            0.000000     0                false   false  182    true         
+83        rectangle             flash         0.074930            0.074930     0                false   false  183    false        
+84        circle                trace         0.020070            0.000000     0                false   false  184    true         
+85        circle                trace         0.020000            0.000000     0                false   false  185    true         
+
+
+Object Painting
+Aperture Position  Resolution
+85                 0.016000
+
+
+Area Fill Aperture
+Aperture Position  Spacing
+85                 0.080000  0.080000
+
+
+Thermal tie aperture  85
+
+
+      ARTWORK FORMAT 
+
+Photoplotter coordinate mode is absolute 
+
+Photoplotter does not support circular interpolation 
+Arcs and circles are interpolated by 32 segments 
+
+
+Photoplotter supports Gerber G code 
+
+Photoplotter supports millimeter units  
+Scale is  1.000 
+
+Data format  3.3 
+
+Photoplotter modal coordinate is off 
+
+Photoplotter modal shutter open(D01) is off 
+
+Leading zeros are present 
+
+Trailing zeros are present 
+
+Record length of the artwork output file is   80 
+Film size is(width by height) :  406.400000  by   508.000000 
+Manual offset specified has shifted artwork data(x,y) :     0.000000  ,     0.000000 
+Photoplotter command block end char is   '*'  
+Photoplotter machine stop code is   'M02'  
+
+

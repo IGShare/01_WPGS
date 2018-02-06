@@ -1,0 +1,149 @@
+  Component List                
+  work\jina\wsm_p3
+------------------------------------------------------------------------
+No. Description(Value)       Footprint(Part)         Q'ty   Location Reference
+------------------------------------------------------------------------
+  1 ANTENNA           ANTENNA868_915MHZ   1	ANT1      
+
+  2 DNI               CC1608            1	C10       
+
+  3 100pF             CC1005            2	C11       C14       
+
+  4 3.6pF             CC1005            2	C13       C15       
+
+  5 2.7pF             CC1005            1	C16       
+
+  6 6.2pF             CC1005            1	C17       
+
+  7 12pF              CC1005            2	C18       C19       
+
+  8 100nF             CC1005           17	C2        C24       C25       C26       C27       
+							C3        C36       C37       C38       C4        
+							C40       C41       C44       C45       C6        
+							C7        C8        
+
+  9 1uF               CC1608            2	C21       C46       
+
+ 10 DNI               CC1005            2	C22       C23       
+
+ 11 10uF              CC1608            1	C28       
+
+ 12 47nF              CC2012            1	C29       
+
+ 13 6.8uF             TC3216            1	C31       
+
+ 14 200pF             CC1608            1	C32       
+
+ 15 680pF             CC1608            1	C33       
+
+ 16 1nF               CC1608            1	C34       
+
+ 17 560pF             CC1608            1	C35       
+
+ 18 2.2uF             CC1608            1	C39       
+
+ 19 22uF              CC1608            2	C5        C9        
+
+ 20 3.3pF             CC1005            1	C52       
+
+ 21 1pF               CC1005            1	C53       
+
+ 22 BL-HG036A-AV-TRB  BL-HG036A-AV      2	D1        D9        
+
+ 23 BAT54             BAT54             2	D7        D8        
+
+ 24 BLM18HE152SN1     BEAD1608          6	FB10      FB11      FB12      FB13      FB14      
+							FB8       
+
+ 25 6.8uH             BEAD2012          1	L2        
+
+ 26 7.5nH             BEAD1005          2	L3        L4        
+
+ 27 6.8nH             BEAD1005          2	L5        L6        
+
+ 28 12nH              BEAD1005          1	L7        
+
+ 29 18nH              BEAD1005          1	L8        
+
+ 30 MMBT3904          SOT-23            2	Q1        Q2        
+
+ 31 MMBT3906          SOT-23            1	Q3        
+
+ 32 CSD16413Q5A       CSD16413Q5A       2	Q4        Q5        
+
+ 33 1K                RC1005            4	R12       R26       R27       R28       
+
+ 34 1K/DNI            RC1005            1	R13       
+
+ 35 47K               RC1608            1	R14       
+
+ 36 200               RC1608            1	R15       
+
+ 37 10K               RC1608            6	R16       R17       R20       R21       R24       
+							R25       
+
+ 38 1M                RC1608            2	R18       R19       
+
+ 39 0                 RC1005            4	R2        R38       R39       R44       
+
+ 40 100K              RC1608            1	R22       
+
+ 41 510K              RC1608            1	R23       
+
+ 42 330               RC1608            3	R29       R31       R5        
+
+ 43 4.7K              RC1005            5	R3        R4        R40       R7        R8        
+
+ 44 1K                RC1608            1	R30       
+
+ 45 0                 RC1608            4	R36       R41       R48       R49       
+
+ 46 200K              RC1608            1	R46       
+
+ 47 4.7K              RC1608            2	R50       R51       
+
+ 48 KHS-42C           KHS-42C           1	S1        
+
+ 49 T__POINT__S       TP_SMD            4	TP10      TP11      TP12      TP9       
+
+ 50 CC1310F128RGZT    QFN48_7_0_5       1	U1        
+
+ 51 LIS3MDL           LGA-12            1	U2        
+
+ 52 TLV342IDR         SOP8_3_9_6_1_27   1	U4        
+
+ 53 AT24HC02C-SSHM__  SOP8_3_9_6_1_27   1	U5        
+
+ 54 TPS73533QDRBRQ1   QFN8_3_0_65       1	U6        
+
+ 55 S-8200ABE-M6T1U   SOT23-6P          1	U7        
+
+ 56 SN74LVC1G04       SOT23-5P_0_95P    1	U8        
+
+ 57 32.768KHz__XTAL/CM315D3279DZFT CM315             1	Y1        
+
+ 58 24__MHz__Crystal/S3225A__Crystal S3225A            1	Y2        
+
+ 59 PCB_HOLE          PCB-HOLE          4	H1        H2        H3        H4        
+
+ 60 RF__SMA-R-PC/DNI  RF_SMA_R_PC       1	J1        
+
+ 61 A2001-WR03        A2001-WR03        1	J10       
+
+ 62 A2001-WR02        A2001-WR02        2	J11       J12       
+
+ 63 1__PIN__HDR       1PIN-HDR          9	J13       J14       J15       J16       J17       
+							J18       J19       J20       J21       
+
+ 64 HEADER_2.54mm_3P  HEADER3           1	J6        
+
+ 65 HEADER_2.54mm_4P/DNI HEADER4           1	J7        
+
+ 66 D4V2P             1PIN-HDR          1	TH5       
+
+ 67 GND               1PIN-HDR          1	TH6       
+
+ 68 D3V3P             1PIN-HDR          1	TH7       
+
+-----------------------------------------------------------------------
+TOTAL								138
