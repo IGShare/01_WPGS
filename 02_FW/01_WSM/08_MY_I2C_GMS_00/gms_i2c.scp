@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<project name="GSM I2C" version="1.4.1.54">
+    <desc><![CDATA[]]></desc>
+    <pattr name="Board">None</pattr>
+    <pattr name="Chip name">CC1310</pattr>
+    <pattr name="Chip package">QFN48 7x7 RGZ</pattr>
+    <pattr name="Chip revision">-</pattr>
+    <pattr name="Code prefix"></pattr>
+    <pattr name="Operating system">TI-RTOS</pattr>
+    <pattr name="Output directory">./</pattr>
+    <task name="I2C">
+        <desc><![CDATA[]]></desc>
+        <tattr name="AUXIO_I2C_BASE_ADDR" type="dec" content="const" scope="task" min="0" max="65535">56</tattr>
+        <tattr name="output.highX" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.highY" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.highZ" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.lowX" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.lowY" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <tattr name="output.lowZ" type="dec" content="struct" scope="task" min="-32768" max="32767">0</tattr>
+        <resource_ref name="ADC" enabled="0"/>
+        <resource_ref name="Analog Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Analog Open-Source Pins" enabled="0"/>
+        <resource_ref name="Analog Pins" enabled="0"/>
+        <resource_ref name="COMPA" enabled="0"/>
+        <resource_ref name="COMPB" enabled="0"/>
+        <resource_ref name="COMPB Event Trigger" enabled="0"/>
+        <resource_ref name="Delay Insertion" enabled="0"/>
+        <resource_ref name="Differential Output Pins" enabled="0"/>
+        <resource_ref name="Digital Input Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Source Pins" enabled="0"/>
+        <resource_ref name="Digital Output Pins" enabled="1">
+            <io_usage name="LED1" label="LED1">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output value on initialization">0</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO25</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="GPIO Event Trigger" enabled="0"/>
+        <resource_ref name="I2C Master" enabled="1">
+            <rattr name="SCL frequency">0</rattr>
+            <rattr name="SCL stretch timeout">1</rattr>
+            <io_usage>
+                <uattr name="SCL pin/0000">DIO6</uattr>
+                <uattr name="SDA pin/0000">DIO7</uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="ISRC" enabled="0"/>
+        <resource_ref name="Math and Logic" enabled="0"/>
+        <resource_ref name="Multi-Buffered Output Data Exchange" enabled="0">
+            <rattr name="Buffer count">2</rattr>
+            <rattr name="Indicate overflow at buffer check">1</rattr>
+            <rattr name="Indicate overflow at buffer switch">0</rattr>
+            <rattr name="Prevent overflow at buffer switch">1</rattr>
+        </resource_ref>
+        <resource_ref name="Peripheral Sharing" enabled="0"/>
+        <resource_ref name="Pulse Counter" enabled="0"/>
+        <resource_ref name="RTC Multi-Event Capture" enabled="0"/>
+        <resource_ref name="RTC-Based Execution Scheduling" enabled="1"/>
+        <resource_ref name="SPI Chip Select" enabled="0"/>
+        <resource_ref name="SPI Data Transfer" enabled="0">
+            <rattr name="Bit rate">0</rattr>
+            <rattr name="MISO configuration when inactive">-1</rattr>
+            <rattr name="MOSI configuration on initialization">0</rattr>
+            <rattr name="MOSI configuration on uninitialization">0</rattr>
+            <rattr name="SCLK configuration on initialization">0</rattr>
+            <rattr name="SCLK configuration on uninitialization">0</rattr>
+            <io_usage>
+                <uattr name="MISO pin/0000"></uattr>
+                <uattr name="MOSI pin/0000"></uattr>
+                <uattr name="SCLK pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="System CPU Alert" enabled="1"/>
+        <resource_ref name="TDC" enabled="0"/>
+        <resource_ref name="Timer 0" enabled="0"/>
+        <resource_ref name="Timer Event Trigger" enabled="0"/>
+        <resource_ref name="UART Emulator" enabled="0">
+            <rattr name="RX buffer size">64</rattr>
+            <rattr name="Required idle period before enabling RX">11</rattr>
+            <rattr name="TX buffer size">64</rattr>
+            <io_usage>
+                <uattr name="RX pin/0000"></uattr>
+                <uattr name="TX pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <sccode name="event0"><![CDATA[]]></sccode>
+        <sccode name="execute"><![CDATA[i2cStart();
+i2cTx(AUXIO_I2C_BASE_ADDR | I2C_OP_WRITE);
+i2cStop();
+
+if(state.i2cStatus == 0x0000){
+    gpioClearOutput(AUXIO_O_LED1);
+}
+if(state.i2cStatus != 0x0000){
+    gpioSetOutput(AUXIO_O_LED1);
+}
+
+fwScheduleTask(1);]]></sccode>
+        <sccode name="initialize"><![CDATA[gpioSetOutput(AUXIO_O_LED1);
+
+//i2cStart();
+//i2cTx(AUXIO_I2C_BASE_ADDR | I2C_OP_WRITE);
+//i2cTx(0x0f);
+//i2cStop();
+
+//if(state.i2cStatus == 0x0000)
+//{
+//    gpioClearOutput(AUXIO_O_LED1);
+//}
+
+fwScheduleTask(1);]]></sccode>
+        <sccode name="terminate"><![CDATA[]]></sccode>
+        <tt_iter>run_execute</tt_iter>
+        <tt_struct>output.highX,state.i2cStatus</tt_struct>
+    </task>
+</project>
