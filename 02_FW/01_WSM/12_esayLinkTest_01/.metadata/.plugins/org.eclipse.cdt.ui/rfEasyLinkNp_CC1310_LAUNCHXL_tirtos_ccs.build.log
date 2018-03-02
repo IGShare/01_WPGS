@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project rfEasyLinkNp_CC1310_LAUNCHXL_tirtos_ccs ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'rfEasyLinkNp_CC1310_LAUNCHXL_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
