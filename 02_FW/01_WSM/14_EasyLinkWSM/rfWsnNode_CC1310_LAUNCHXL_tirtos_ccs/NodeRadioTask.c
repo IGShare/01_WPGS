@@ -124,6 +124,8 @@ static uint16_t adcData;
 static uint8_t nodeAddress = 0;
 static struct DualModeSensorPacket dmSensorPacket;
 
+static struct RadioOperation initRadioOperation;
+
 
 /* previous Tick count used to calculate uptime */
 static uint32_t prevTicks;
@@ -136,7 +138,7 @@ static void nodeRadioTaskFunction(UArg arg0, UArg arg1);
 static void returnRadioOperationStatus(enum NodeRadioOperationStatus status);
 static void sendDmPacket(struct DualModeSensorPacket sensorPacket, uint8_t maxNumberOfRetries, uint32_t ackTimeoutMs);
 static void resendPacket(void);
-static uint8_t initsendPacket(uint8_t maxNumberOfRetries, uint32_t ackTimeoutMs);
+uint8_t sendInitPacket(struct DualModeSensorPacket sensorPacket, uint8_t maxNumberOfRetries, uint32_t ackTimeoutMs);
 static void rxDoneCallback(EasyLink_RxPacket * rxPacket, EasyLink_Status status);
 
 #ifdef FEATURE_BLE_ADV
@@ -187,6 +189,7 @@ static void nodeRadioTaskFunction(UArg arg0, UArg arg1)
 #endif
 
 
+    uint32_t i=0, j=0;
     EasyLink_Params easyLink_params;
     EasyLink_Params_init(&easyLink_params);
 
@@ -208,23 +211,26 @@ static void nodeRadioTaskFunction(UArg arg0, UArg arg1)
 
 
     //Address Matching Process with WLGM
-//    while(1){
-//        if(initsendPacket(NODERADIO_MAX_RETRIES, NORERADIO_ACK_TIMEOUT_TIME_MS) == EasyLink_Status_Success)
-//        {
-//            /* Open LED pins */
-//            ledPinHandle_init = PIN_open(&ledPinState_init, pinTable_init);
-//            if (!ledPinHandle_init)
-//            {
-//                System_abort("Error initializing board 3.3V domain pins\n");
-//            }
-//
-//            #if !defined __CC1350STK_BOARD_H__
-//                        PIN_setOutputValue(ledPinHandle_init, NODE_CONNECTED_LED,!PIN_getOutputValue(NODE_CONNECTED_LED));
-//            #endif
-//            break;
-//        }
-//
-//    }
+    while(1){
+        dmSensorPacket.header.sourceAddress = 16;//nodeAddress;
+        dmSensorPacket.header.packetType = RADIO_PACKET_TYPE_INIT_PACKET;
+        if(sendInitPacket(dmSensorPacket, NODERADIO_MAX_RETRIES, NORERADIO_ACK_TIMEOUT_TIME_MS) == 1)
+        {
+            /* Open LED pins */
+            ledPinHandle_init = PIN_open(&ledPinState_init, pinTable_init);
+            if (!ledPinHandle_init)
+            {
+                System_abort("Error initializing board 3.3V domain pins\n");
+            }
+
+            #if !defined __CC1350STK_BOARD_H__
+                        PIN_setOutputValue(ledPinHandle_init, NODE_CONNECTED_LED,!PIN_getOutputValue(NODE_CONNECTED_LED));
+            #endif
+            Task_sleep(20);
+            //break;
+        }
+
+    }
 
 
 //    /* Use the True Random Number Generator to generate sensor node address randomly */;
@@ -439,49 +445,50 @@ static void resendPacket(void)
     currentRadioOperation.retriesDone++;
 }
 
-static uint8_t initsendPacket(uint8_t maxNumberOfRetries, uint32_t ackTimeoutMs)
+uint8_t sendInitPacket(struct DualModeSensorPacket sensorPacket, uint8_t maxNumberOfRetries, uint32_t ackTimeoutMs)
 {
-    uint8_t ieeeAddr[8] = {0,};
-    uint32_t wlgmAddr;
-    EasyLink_TxPacket init_txPacket = { {0}, 0, 0, {0} };
-    EasyLink_RxPacket init_rxPacket;
     /* Set destination address in EasyLink API */
-    EasyLink_getIeeeAddr(ieeeAddr);
-    init_txPacket.absTime = 0;
-    init_txPacket.payload[0] = ieeeAddr[4];
-    init_txPacket.payload[1] = ieeeAddr[5];
-    init_txPacket.payload[2] = ieeeAddr[6];
-    init_txPacket.payload[3] = ieeeAddr[7];
-    init_txPacket.len = sizeof(EasyLink_TxPacket);
+     initRadioOperation.easyLinkTxPacket.dstAddr[0] = RADIO_CONCENTRATOR_ADDRESS;
 
-    EasyLink_setCtrl(EasyLink_Ctrl_AsyncRx_TimeOut, EasyLink_ms_To_RadioTime(ackTimeoutMs));
+     /* Copy ADC packet to payload
+      * Note that the EasyLink API will implcitily both add the length byte and the destination address byte. */
+     initRadioOperation.easyLinkTxPacket.payload[0] = dmSensorPacket.header.sourceAddress;
+     initRadioOperation.easyLinkTxPacket.payload[1] = dmSensorPacket.header.packetType;
+     initRadioOperation.easyLinkTxPacket.payload[2] = (dmSensorPacket.adcValue & 0xFF00) >> 8;
+     initRadioOperation.easyLinkTxPacket.payload[3] = (dmSensorPacket.adcValue & 0xFF);
+     initRadioOperation.easyLinkTxPacket.payload[4] = (dmSensorPacket.batt & 0xFF00) >> 8;
+     initRadioOperation.easyLinkTxPacket.payload[5] = (dmSensorPacket.batt & 0xFF);
+     initRadioOperation.easyLinkTxPacket.payload[6] = (dmSensorPacket.time100MiliSec & 0xFF000000) >> 24;
+     initRadioOperation.easyLinkTxPacket.payload[7] = (dmSensorPacket.time100MiliSec & 0x00FF0000) >> 16;
+     initRadioOperation.easyLinkTxPacket.payload[8] = (dmSensorPacket.time100MiliSec & 0xFF00) >> 8;
+     initRadioOperation.easyLinkTxPacket.payload[9] = (dmSensorPacket.time100MiliSec & 0xFF);
+     initRadioOperation.easyLinkTxPacket.payload[10] = dmSensorPacket.button;
 
+     initRadioOperation.easyLinkTxPacket.len = sizeof(struct DualModeSensorPacket);
 
-    /* Send packet  */
-    if (EasyLink_transmit(&init_txPacket) != EasyLink_Status_Success)
-    {
-        System_abort("EasyLink_transmit failed");
-    }
+     /* Setup retries */
+     initRadioOperation.maxNumberOfRetries = maxNumberOfRetries;
+     initRadioOperation.ackTimeoutMs = ackTimeoutMs;
+     initRadioOperation.retriesDone = 0;
+     EasyLink_setCtrl(EasyLink_Ctrl_AsyncRx_TimeOut, EasyLink_ms_To_RadioTime(ackTimeoutMs));
 
+     /* Send packet  */
+     if (EasyLink_transmit(&currentRadioOperation.easyLinkTxPacket) != EasyLink_Status_Success)
+     {
+         System_abort("EasyLink_transmit failed");
+     }
+ #if defined(Board_DIO30_SWPWR)
+     /* this was a blocking call, so Tx is now complete. Turn off the RF switch power */
+     PIN_setOutputValue(blePinHandle, Board_DIO30_SWPWR, 0);
+ #endif
 
-    /* Enter RX */
-    if (EasyLink_receive(&init_rxPacket) == EasyLink_Status_Success)
-    {
-        if(init_rxPacket.dstAddr[0] == ieeeAddr[4] &&
-           init_rxPacket.dstAddr[1] == ieeeAddr[5] &&
-           init_rxPacket.dstAddr[2] == ieeeAddr[6] &&
-           init_rxPacket.dstAddr[3] == ieeeAddr[7])
-        {
-            wlgmAddr = init_rxPacket.payload[0] |  init_rxPacket.payload[1]<< 8 |  init_rxPacket.payload[2] << 16 |  init_rxPacket.payload[3] << 24;
-            return Initial_Status_Success;
-        }
+     /* Enter RX */
+     if (EasyLink_receiveAsync(rxDoneCallback, 0) != EasyLink_Status_Success)
+     {
+         System_abort("EasyLink_receiveAsync failed");
+     }
 
-        else
-            return Initial_Status_Fail;
-
-    }
-
-    return Initial_Status_Fail;
+     return 1;
 
 }
 

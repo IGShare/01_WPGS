@@ -40,9 +40,11 @@
 #define RADIO_CONCENTRATOR_BC_ADDRESS     0x00 // Broadcasting Address for initialization and connection with WLGM
 #define RADIO_EASYLINK_MODULATION     EasyLink_Phy_Custom
 
+
 #define RADIO_PACKET_TYPE_ACK_PACKET             0
 #define RADIO_PACKET_TYPE_ADC_SENSOR_PACKET      1
 #define RADIO_PACKET_TYPE_DM_SENSOR_PACKET       2
+#define RADIO_PACKET_TYPE_INIT_PACKET            3
 
 struct PacketHeader {
     uint8_t sourceAddress;

@@ -1671,7 +1671,7 @@ __FAR__ const xdc_SizeT ti_sysbios_knl_Task_Module_State_terminatedQ__O = offset
  *  Define absolute path prefix for this executable's
  *  configuration generated files.
  */
-xdc__META(__ASM__, "@(#)__ASM__ = D:/GIT/01_WPGS/02_FW/01_WSM/13_EasyLinkWLGM/tirtos_builds_CC1310_LAUNCHXL_release_ccs/Debug/configPkg/package/cfg/release_pem3");
+xdc__META(__ASM__, "@(#)__ASM__ = E:/GUI/01_WPGS/02_FW/01_WSM/13_EasyLinkWLGM/tirtos_builds_CC1310_LAUNCHXL_release_ccs/Debug/configPkg/package/cfg/release_pem3");
 
 /*
  *  ======== __ISA__ ========

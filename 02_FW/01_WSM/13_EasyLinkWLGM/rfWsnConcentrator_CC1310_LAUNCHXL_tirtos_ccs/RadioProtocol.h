@@ -42,6 +42,7 @@
 #define RADIO_PACKET_TYPE_ACK_PACKET             0
 #define RADIO_PACKET_TYPE_ADC_SENSOR_PACKET      1
 #define RADIO_PACKET_TYPE_DM_SENSOR_PACKET       2
+#define RADIO_PACKET_TYPE_INIT_PACKET            3
 
 struct PacketHeader {
     uint8_t sourceAddress;

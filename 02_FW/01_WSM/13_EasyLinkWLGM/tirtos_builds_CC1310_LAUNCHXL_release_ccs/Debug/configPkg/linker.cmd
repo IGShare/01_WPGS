@@ -9,8 +9,8 @@
  */
 
 
--l"D:\GIT\01_WPGS\02_FW\01_WSM\13_EasyLinkWLGM\tirtos_builds_CC1310_LAUNCHXL_release_ccs\Debug\configPkg\package\cfg\release_pem3.oem3"
--l"D:\GIT\01_WPGS\02_FW\01_WSM\13_EasyLinkWLGM\tirtos_builds_CC1310_LAUNCHXL_release_ccs\src\sysbios\rom_sysbios.aem3"
+-l"E:\GUI\01_WPGS\02_FW\01_WSM\13_EasyLinkWLGM\tirtos_builds_CC1310_LAUNCHXL_release_ccs\Debug\configPkg\package\cfg\release_pem3.oem3"
+-l"E:\GUI\01_WPGS\02_FW\01_WSM\13_EasyLinkWLGM\tirtos_builds_CC1310_LAUNCHXL_release_ccs\src\sysbios\rom_sysbios.aem3"
 -l"C:\ti\simplelink_cc13x0_sdk_1_60_00_21\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\boot.aem3"
 -l"C:\ti\simplelink_cc13x0_sdk_1_60_00_21\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\auto_init.aem3"
 
