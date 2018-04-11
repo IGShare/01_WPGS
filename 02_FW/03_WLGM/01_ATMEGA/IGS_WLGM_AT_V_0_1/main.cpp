@@ -5,7 +5,7 @@
  * Author : MINYOUNG EOM
  */ 
 #define F_CPU 1000000
-
+#include <string.h>
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
@@ -13,29 +13,89 @@
 #include <avr/sleep.h>
 
 #include "IGS_WLGM_Define.h"
+#include "IGS_WLGM_Ring_buffer.h"
 #include "IGS_WLGM_Global.h"
 #include "IGS_WLGM_Function.h"
+#include "IGS_WLGM_UART.h"
 
+/**
+ * \brief UART data register empty interrupt handler
+ *
+ * This handler is called each time the UART data register is available for
+ * sending data.
+ */
+ISR(USART_UDRE_vect)
+{
+	// if there is data in the ring buffer, fetch it and send it
+	if (!ring_buffer_is_empty(&ring_buffer_out)) {
+		UDR0 = ring_buffer_get(&ring_buffer_out);
+	}
+	else {
+		// no more data to send, turn off data ready interrupt
+		UCSR0B &= ~(1 << UDRIE0);
+	}
+}
+
+/**
+ * \brief Data RX interrupt handler
+ *
+ * This is the handler for UART receive data
+ */
+ISR(USART_RX_vect)
+{
+	uint8_t data;
+	ring_buffer_put(&ring_buffer_in, UDR0);
+	data = UDR0;
+	if(data == 97){
+		 PORTD &= ~(1<<PORTD6);
+		 _delay_ms(100);
+		 PORTD |= (1<<PORTD6);
+		 
+	}
+	else{
+		
+		PORTD &= ~(1<<PORTD7);
+		_delay_ms(100);
+		PORTD |= (1<<PORTD7);
+	}
+		
+	
+}
 
 int main(void)
 {
     /* Replace with your application code */
+	uint8_t echoData;
 	struct TypeOnePacket rx_message1;
 	struct TxPacket tx_message;
-	
+	char test_string[] = "CCM";
+	uint8_t tbuf[64] = {0,};
+	uint8_t rbuf[64] = {0,};
+	uint8_t cnt;
 	igs_wlgm_port_init();
 	igs_wlgm_led_port_test();
 	igs_wlgm_ExternalInterruptInit();
 	igs_wlgm_TimerZeroInit();
 	igs_wlgm_StatusInit();
+	igs_wlgm_uart_init();
 	
 	mySerialNumber = igs_wlgm_ReadSerialNumber();
 
 	
 	sei();
+	
+	// Send the test string
+	//for (cnt = 0; cnt < strlen(test_string); cnt++) {
+		//uart_putchar(test_string[cnt]);
+	//}
 
 	while (1) 
     {
+
+		while (!uart_char_waiting());
+		echoData = uart_getchar();
+		uart_putchar(echoData);
+
 
 		if(G_isSameValue == 1){
 			//PORTB ^= (1<<PB1);

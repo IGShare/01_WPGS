@@ -44,4 +44,13 @@ volatile uint8_t LEDF = 0;
 
 volatile uint8_t G_isSameValue = 0;
 
+
+uint8_t out_buffer[BUFFER_SIZE];
+uint8_t in_buffer[BUFFER_SIZE];
+
+//! ring buffer to use for the UART transmission
+struct ring_buffer ring_buffer_out;
+//! ring buffer to use for the UART reception
+struct ring_buffer ring_buffer_in;
+
 #endif /* IGS_WLGM_GLOBAL_H_ */

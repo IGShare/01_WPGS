@@ -16,7 +16,7 @@
 
 
 
-#define PLC_TX_ONEBIT_TIME_US 300 // 2000 /// 500
+#define PLC_TX_ONEBIT_TIME_US 1000 // 2000 /// 500
 
 #define TIMER_INIT_VALUE 0 //116us
 
@@ -96,6 +96,8 @@ _delay_us(b)
 volatile uint8_t MYPPNSR;			//PLC Positive or Negative Status Register
 #define PPS						0   //PLC Positive Status
 #define PNS						1	//PLC Negative Status
+
+#define BUFFER_SIZE 64
 
 
 
